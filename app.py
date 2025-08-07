@@ -41,7 +41,7 @@ def generate_otp():
 @app.route('/')
 def home():
     scholarships = Scholarship.query.all()
-    return render_template('home.html')
+    return render_template('home.html',scholarships=scholarships)
 
 
 @app.route('/login', methods=['GET', 'POST'])
