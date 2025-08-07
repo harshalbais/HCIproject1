@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scholarship Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link 
+    rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  >
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
+    defer>
+  </script>
+</head>
+
+<body style="background-color: #8d8f8e;">
+  <div class="container mt-4">
+
+    <!-- Logo and Title -->
+    <div class="row align-items-center mb-4">
+      <div class="col-auto">
+        <img src="{{ url_for('static', filename='scholarship_logo.jpg') }}" alt="Logo" width="60" style="border-radius: 8px;">
+      </div>
+      <div class="col">
+        <h2 class="text-white mb-0">Government Scholarship Portal</h2>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-light rounded mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Scholarship</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Schemes</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                More
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">FAQs</a></li>
+                <li><a class="dropdown-item" href="#">Support</a></li>
+              </ul>
+            </li> <li class= "nav-item"> <a class="nav-link" href = "login"> Login </a> </li>
+                      </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Welcome Box -->
+    <div class="bg-light p-4 rounded shadow mb-4">
+      <h4 class="text-dark">🎓 Welcome to the Official Government Scholarship Portal</h4>
+      <p class="text-secondary mb-0" style="font-size: 1.1rem;">
+        This portal provides a single platform for students to apply for various government-funded scholarships.
+        By logging in, you can securely submit your application, track its progress, and receive timely updates.
+        <br><br>
+        <strong>Note:</strong> Make sure your Aadhaar number, password, and email are entered correctly before proceeding.
+      </p>
+    </div>
+
+    <!-- Flash Message -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert alert-danger mx-auto" style="max-width: 500px;">
+          {{ messages[0] }}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <!-- Scholarship Table -->
+<div class="card mt-5 p-4 shadow">
+  <h4 class="mb-4">📝 Available Scholarships</h4>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle text-center">
+      <thead class="table-primary">
+        <tr>
+          <th>Scholarship ID</th>
+          <th>Name</th>
+          <th>Eligibility</th>
+          <th>Amount</th>
+          <th>Deadline</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SC001</td>
+          <td>Post Matric Scholarship</td>
+          <td>SC/ST Students</td>
+          <td>₹12,000/year</td>
+          <td>31-Aug-2025</td>
+        </tr>
+        <tr>
+          <td>SC002</td>
+          <td>Merit-cum-Means Scholarship</td>
+          <td>General/OBC, >75% Marks</td>
+          <td>₹20,000/year</td>
+          <td>15-Sep-2025</td>
+        </tr>
+        <tr>
+          <td>SC003</td>
+          <td>Minority Scholarship</td>
+          <td>Muslim, Christian, Sikh, etc.</td>
+          <td>₹10,000/year</td>
+          <td>30-Aug-2025</td>
+        </tr>
+        <!-- Add more rows here -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+  </div>
+</body>
+</html>
