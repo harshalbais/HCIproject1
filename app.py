@@ -40,6 +40,7 @@ def generate_otp():
 
 @app.route('/')
 def home():
+    scholarships = Scholarship.query.all()
     return render_template('home.html')
 
 
