@@ -81,5 +81,5 @@ def verify():
 
 if __name__ == '__main__':
     
-    db.create_all()   # ✅ This will create User and Scholarship tables in your Render DB
+   
     app.run(debug=True)
