@@ -7,7 +7,7 @@ from flask_mail import Mail, Message
 app= Flask(__name__)
 app.secret_key = '123'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://harsh:AQueJMvWr5qVE6jxl5WxvHvx87khQPSN@dpg-d28dknmuk2gs73f6lqcg-a.oregon-postgres.render.com/harshhhh'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://harshhh_user:aULN68rvgQY3xxIh8VUFf8Fed1Ejd7c2@dpg-d35c1memcj7s73bh38c0-a.oregon-postgres.render.com/harshhh'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
